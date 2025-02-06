@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_project/styled_text.dart';
 
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
@@ -8,6 +9,8 @@ class GradientContainer extends StatelessWidget {
 
   final Color color1;
   final Color color2;
+
+  void rollDice() {}
 
   @override
   Widget build(BuildContext context) {
@@ -23,10 +26,7 @@ class GradientContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/Himmel.jpg', 
-              width: 300
-              ),
+            Image.asset('assets/images/Himmel.jpg', width: 300),
             SizedBox(height: 20),
             Text(
               'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PAJAK 12%',
@@ -37,6 +37,11 @@ class GradientContainer extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
+            TextButton(
+              onPressed: rollDice,
+              style: TextButton.styleFrom(foregroundColor: Colors.white, textStyle: TextStyle(fontSize: 20),),
+              child: const Text('-HIMMEL THE HERO-'),
+            )
           ],
         ),
       ),
