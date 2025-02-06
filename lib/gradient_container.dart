@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/styled_text.dart';
 
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer(this.color1, this.color2, {super.key});
+  GradientContainer(this.color1, this.color2, {super.key});
 
   final Color color1;
   final Color color2;
+  var activeDice = 'assets/images/dan-yap.jpg';
 
-  void rollDice() {}
+  void rollDice() {
+    activeDice = 'assets/images/dan-yap.jpg';
+    print('Dice rolled');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +29,10 @@ class GradientContainer extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/images/Himmel.jpg', width: 300),
+            Image.asset(activeDice, width: 300),
             SizedBox(height: 20),
             Text(
-              'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PAJAK 12%',
+              'ESOK KOLOH DOK CIKGU',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -40,7 +43,7 @@ class GradientContainer extends StatelessWidget {
             TextButton(
               onPressed: rollDice,
               style: TextButton.styleFrom(foregroundColor: Colors.white, textStyle: TextStyle(fontSize: 20),),
-              child: const Text('-HIMMEL THE HERO-'),
+              child: const Text(''),
             )
           ],
         ),
