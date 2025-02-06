@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_first_project/styled_text.dart';
 
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
@@ -25,17 +24,18 @@ class GradientContainer extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/images/azril-andre.png', 
+              'assets/images/Himmel.jpg', 
               width: 300
               ),
             SizedBox(height: 20),
             Text(
-              'ADUH GANTENGNYA',
+              'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PAJAK 12%',
               style: TextStyle(
-                fontSize: 24,
+                fontSize: 20,
                 fontWeight: FontWeight.bold,
                 color: Colors.white,
               ),
+              textAlign: TextAlign.center,
             ),
           ],
         ),
