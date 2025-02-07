@@ -8,7 +8,7 @@ class GradientContainer extends StatelessWidget {
 
   final Color color1;
   final Color color2;
-  var activeDice = 'assets/images/dan-yap.jpg';
+  var activeDice = 'assets/images/Himmel.jpg';
 
   void rollDice() {
     activeDice = 'assets/images/dan-yap.jpg';
@@ -32,7 +32,7 @@ class GradientContainer extends StatelessWidget {
             Image.asset(activeDice, width: 300),
             SizedBox(height: 20),
             Text(
-              'ESOK KOLOH DOK CIKGU',
+              'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PPN 12%',
               style: TextStyle(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
@@ -43,7 +43,7 @@ class GradientContainer extends StatelessWidget {
             TextButton(
               onPressed: rollDice,
               style: TextButton.styleFrom(foregroundColor: Colors.white, textStyle: TextStyle(fontSize: 20),),
-              child: const Text(''),
+              child: const Text('-HIMMEL THE HERO-'),
             )
           ],
         ),
