@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:my_first_project/dice_roller.dart';
 
 var startAlignment = Alignment.topLeft;
 var endAlignment = Alignment.bottomRight;
 
 class GradientContainer extends StatelessWidget {
-  GradientContainer(this.color1, this.color2, {super.key});
+  const GradientContainer(this.color1, this.color2, {super.key});
 
   final Color color1;
   final Color color2;
-  var activeDice = 'assets/images/Himmel.jpg';
-
-  void rollDice() {
-    activeDice = 'assets/images/dan-yap.jpg';
-    print('Dice rolled');
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -26,27 +21,7 @@ class GradientContainer extends StatelessWidget {
         ),
       ),
       child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(activeDice, width: 300),
-            SizedBox(height: 20),
-            Text(
-              'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PPN 12%',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-                color: Colors.white,
-              ),
-              textAlign: TextAlign.center,
-            ),
-            TextButton(
-              onPressed: rollDice,
-              style: TextButton.styleFrom(foregroundColor: Colors.white, textStyle: TextStyle(fontSize: 20),),
-              child: const Text('-HIMMEL THE HERO-'),
-            )
-          ],
-        ),
+        child: DiceRoller(),
       ),
     );
   }
