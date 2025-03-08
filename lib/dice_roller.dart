@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
+final randominizer = Random();
 
 class DiceRoller extends StatefulWidget {
   const DiceRoller({super.key});
@@ -10,13 +12,12 @@ class DiceRoller extends StatefulWidget {
 }
 
 class _DiceRollerState extends State<DiceRoller> {
-  var activeDice = 'assets/images/Himmel.jpg';
+  var currentDiceRoll = 2;
 
   void rollDice() {
     setState(() {
-      activeDice = 'assets/images/dan-yap.jpg';
+      currentDiceRoll = randominizer.nextInt(6) + 1;
     });
-    activeDice = 'assets/images/dan-yap.jpg';
   }
 
   @override
@@ -24,10 +25,8 @@ class _DiceRollerState extends State<DiceRoller> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Image.asset(activeDice, width: 300),
-        SizedBox(height: 20),
         Text(
-          'KARENA PAHLAWAN HIMMEL TIDAK AKAN MEMBAYAR PPN 12%',
+          'LEMPAR DADU',
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.bold,
@@ -35,13 +34,15 @@ class _DiceRollerState extends State<DiceRoller> {
           ),
           textAlign: TextAlign.center,
         ),
+        Image.asset('assets/images/dice-$currentDiceRoll.png', width: 200),
+        SizedBox(height: 10),
         TextButton(
           onPressed: rollDice,
           style: TextButton.styleFrom(
             foregroundColor: Colors.white,
             textStyle: TextStyle(fontSize: 20),
           ),
-          child: const Text('-HIMMEL THE HERO-'),
+          child: const Text('LEMPAR'),
         )
       ],
     );
